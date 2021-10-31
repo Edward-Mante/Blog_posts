@@ -63,7 +63,7 @@ type Mutation {
 }
 `;
 
-const booksResolvers = {
+const blogsResolvers = {
     Query: {
         blogs: () => blogs, 
         blog:(parent,args) => blogs.find(blog => blog.title === args.title)
@@ -122,7 +122,7 @@ const booksResolvers = {
 
 const server = new ApolloServer({
      typeDefs: schemas, 
-     resolvers: booksResolvers,
+     resolvers: blogsResolvers,
      playground: true,
      introspection: true
     });
